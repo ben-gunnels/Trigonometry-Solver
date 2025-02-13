@@ -19,8 +19,10 @@ public:
     int sid[3];
     int ang[3];
     DataTruthTable TruthTable;
-    // Functs
-    TrigFunctions(int (&sid[3]), int (&ang[3])){}
+
+    TrigFunctions(int (&sid)[3], int (&ang)[3]){}
+
+    // Validation Functions
     bool SSS(int (&sid[3]), int (&ang[3])){}
     
     bool SAS(int (&sid[3]), int (&ang[3])){}

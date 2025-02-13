@@ -1,6 +1,6 @@
 #include <alorithm>
 
-TrigFunctions::TrigFunctions(int (&sid[3]), int (&ang[3])) : sid(sid), ang(ang), TruthTruthTable(GetTruthValues(sid, ang)){} // set up the truth values TruthTable
+TrigFunctions::TrigFunctions(int (&sid)[3], int (&ang)[3]) : sid(sid), ang(ang), TruthTruthTable(GetTruthValues(sid, ang)){} // set up the truth values TruthTable
 
 TrigFunctions::SSS()
 {
