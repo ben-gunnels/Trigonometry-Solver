@@ -1,16 +1,21 @@
 #include <iostream>
 #include <cmath>
 #include <exception>
+#include "TrigSolver.h"
+#include "Triangle.h"
+#include "TrigFunctions.h"
 
 int main()
 {
-    Triangle triangle;
-    ValidationObj validator;
+    int sides[3] {0, 0, 0};
+    int angles[3] {0, 0, 0};
     
     std::cout << "Welcome to Trig Solver! Please enter some sides and angles of a triangle in this format: \n"
         << "(side a) (side b) (side c) (angle alpha) (angle beta) (angle gamma)\n" << "If you don't know a side or angle, please enter 0. \n";
 
-    std::cin >> triangle.sides[0] >> triangle.sides[1] >> triangle.sides[2] >> triangle.angles[0] >> triangle.angles[1] >> triangle.angles[2];
+    std::cin >> sides[0] >> sides[1] >> sides[2] >> angles[0] >> angles[1] >> angles[2];
+    Triangle triangle(sides, angles);
+    ValidationObj validator;
 
     validator = triangle.ValidateData();
 

@@ -1,4 +1,4 @@
-namespace Globals {
-    const int triSize = 3;
-    const int defaultTriangleValue = -1;
-}
+struct Globals {
+    static const int triSize = 3;
+    static const int defaultTriangleValue = -1;
+};

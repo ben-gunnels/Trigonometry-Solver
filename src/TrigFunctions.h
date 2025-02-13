@@ -1,5 +1,5 @@
-#ifndef TRIANGLE
-#define TRIANGLE
+#ifndef TRIGFUNCTIONS
+#define TRIGFUNCTIONS
 
 #include <iostream>
 
@@ -10,31 +10,31 @@ struct DataTruthTable {
     int alpha;
     int beta;
     int gamma;
-
-}
+};
 
 class TrigFunctions {
 public:
     // Data
-    int sid[3];
-    int ang[3];
+    int* sides;
+    int* angles;
     DataTruthTable TruthTable;
 
+    TrigFunctions(){}
     TrigFunctions(int (&sid)[3], int (&ang)[3]){}
 
     // Validation Functions
-    bool SSS(int (&sid[3]), int (&ang[3])){}
+    bool SSS(){}
     
-    bool SAS(int (&sid[3]), int (&ang[3])){}
+    bool SAS(){}
 
-    bool ASA(int (&sid[3]), int (&ang[3])){}
+    bool ASA(){}
 
-    bool AAS(int (&sid[3]), int (&ang[3])){}
+    bool AAS(){}
 
-    bool SSA(int (&sid[3]), int (&ang[3])){}
-};
+    bool SSA(){}
 private:
-    DataTruthTable GetTruthValues(int (&sid[3]), int (&ang[3])){}
+    DataTruthTable GetTruthValues(int (&sid)[3], int (&ang)[3]){}
+};
 
 
-#endif // TRIANGLE
+#endif // TRIGFUNCTIONS

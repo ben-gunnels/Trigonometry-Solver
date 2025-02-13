@@ -2,11 +2,12 @@
 #define TRIANGLE
 
 #include <iostream>
+#include "TrigFunctions.h"
 
 struct ValidationObj {
     bool valid;
     int cases[5]; // Return the cases SSS SAS ASA AAS SSA 
-}
+};
 
 struct Triangle {
     int sides[3]; // a b c
@@ -15,7 +16,8 @@ struct Triangle {
 
     Triangle(int (&sid)[3], int (&ang)[3]){};
     
-private:
+    // Destructor to avoid memory leak
+    ~Triangle() {}
     ValidationObj ValidateData(){}
 };
 

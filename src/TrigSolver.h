@@ -6,6 +6,6 @@
 class TrigSolver{
 
     
-}
+};
 
-#endif // TRIANGLE
+#endif // TRIGSOLVER
