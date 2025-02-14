@@ -1,6 +1,7 @@
 #ifndef TRIGFUNCTIONS
 #define TRIGFUNCTIONS
 
+#include <algorithm>
 #include <iostream>
 
 struct DataTruthTable {
@@ -15,25 +16,30 @@ struct DataTruthTable {
 class TrigFunctions {
 public:
     // Data
-    int* sides;
-    int* angles;
+    int sides[3];
+    int angles[3];
     DataTruthTable TruthTable;
 
-    TrigFunctions(){}
-    TrigFunctions(int (&sid)[3], int (&ang)[3]){}
+    TrigFunctions();
+    TrigFunctions(int (&sid)[3], int (&ang)[3]);
 
     // Validation Functions
-    bool SSS(){}
+    bool SSS(); // Law of Cosine 0 
     
-    bool SAS(){}
+    bool SAS(); // Law of Cosine 1
 
-    bool ASA(){}
+    bool ASA(); // Law of Sine 2
 
-    bool AAS(){}
+    bool AAS(); // Law of Sine 3
 
-    bool SSA(){}
+    bool SSA(); // Law of Sine 4
+
+    void LawOfSine(int method, int* solution);
+    void LawOfCosine(int method, int* solution);
+    void SolveSSS(int* solution); // The three sides
+    void SolveSAS(int* solution, int s1, int a2, int s3); // The two sides with the angle between
 private:
-    DataTruthTable GetTruthValues(int (&sid)[3], int (&ang)[3]){}
+    DataTruthTable GetTruthValues(int (&sid)[3], int (&ang)[3]);
 };
 
 
