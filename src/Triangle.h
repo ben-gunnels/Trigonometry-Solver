@@ -11,16 +11,17 @@ struct ValidationObj {
 };
 
 struct Triangle {
-    int sides[3]; // a b c
-    int angles[3]; // alpha beta gamma
+    double sides[3]; // a b c
+    double angles[3]; // alpha beta gamma
     TrigFunctions Trig; // Provides trigonemetric functions and data checking
 
     Triangle();
-    Triangle(int (&sid)[3], int (&ang)[3]);
+    Triangle(double (&sid)[3], double (&ang)[3]);
     ValidationObj ValidateData();
-    int* SolveTriangle();
+    double* SolveTriangle();
 private:
     int UseMethod(std::array<int, 5> cases); // Which method to look for given the triangle inputs
+    void Display(double& solution);
 };
 
 #endif // TRIANGLE

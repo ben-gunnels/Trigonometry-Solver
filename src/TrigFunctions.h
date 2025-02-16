@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <iostream>
 
-struct DataTruthTable {
+struct DataTruthTable { // Stores values to express that a value is valid meaning > 0
     int a;
     int b;
     int c;
@@ -16,12 +16,12 @@ struct DataTruthTable {
 class TrigFunctions {
 public:
     // Data
-    int sides[3];
-    int angles[3];
+    double sides[3];
+    double angles[3];
     DataTruthTable TruthTable;
 
     TrigFunctions();
-    TrigFunctions(int (&sid)[3], int (&ang)[3]);
+    TrigFunctions(double (&sid)[3], double (&ang)[3]);
 
     // Validation Functions
     bool SSS(); // Law of Cosine 0 
@@ -34,12 +34,21 @@ public:
 
     bool SSA(); // Law of Sine 4
 
-    void LawOfSine(int method, int* solution);
-    void LawOfCosine(int method, int* solution);
-    void SolveSSS(int* solution); // The three sides
-    void SolveSAS(int* solution, int s1, int a2, int s3); // The two sides with the angle between
+    void LawOfSine(int method, double* solution);
+    void LawOfCosine(int method, double* solution);
+    void SolveSSS(double* solution); // The three sides
+    void SolveSAS(double* solution); // The two sides with the angle between
+    void SolveASA(double* solution); // The two angles with a side between
+    void SolveAAS(double* solution); // Two angles with an included side
+    void SolveSSA(double* solution); // Two sides with an included angle
+
 private:
-    DataTruthTable GetTruthValues(int (&sid)[3], int (&ang)[3]);
+    DataTruthTable GetTruthValues(double (&sid)[3], double (&ang)[3]);
+    double SolveSideLOC(double a, double b, double angle);
+    double SolveAngleLOC(double a, double b, double c);
+    double SolveSideLOS(double a, double alpha, double beta);
+    double SolveAngleLOS(double a, double b, double alpha);
+    bool CheckValidSSA(double a, double b, double alpha);
 };
 
 

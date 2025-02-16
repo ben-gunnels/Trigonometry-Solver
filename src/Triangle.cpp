@@ -5,7 +5,7 @@
 
 Triangle::Triangle(){};
 
-Triangle::Triangle(int (&sid)[3], int (&ang)[3]) 
+Triangle::Triangle(double (&sid)[3], double (&ang)[3]) 
                     : sides{sid[0], sid[1], sid[2]}, 
                     angles{ang[0], ang[1], ang[2]}, 
                     Trig(sid, ang) {}
@@ -18,14 +18,14 @@ ValidationObj Triangle::ValidateData()
     result.cases = {Trig.SSS(), Trig.SAS(), Trig.ASA(), Trig.AAS(), Trig.SSA()};
 
     result.valid = std::any_of(result.cases.begin(), result.cases.end(), 
-            [](int x){ return x != 0; });
+            [](double x){ return x != 0; });
 
     return result; 
 }
 
-int* Triangle::SolveTriangle()
+double* Triangle::SolveTriangle()
 {
-    int solution[6] {0, 0, 0, 0, 0, 0};
+    double solution[6] {0, 0, 0, 0, 0, 0};
     ValidationObj validator = ValidateData();
 
     if (!validator.valid)
@@ -40,16 +40,17 @@ int* Triangle::SolveTriangle()
     {
         Trig.LawOfCosine(method, solution);
     }
-    else if (method > 2 && method < 6)
+    else if (method > 1 && method < 6)
     {
         Trig.LawOfSine(method, solution);
     }
-
+    std::cout << "Solution: ";
     for (int i = 0; i < sizeof(solution) / sizeof(solution[0]); ++i)
     {
         std::cout << solution[i] << " ";
     }
 
+    std::cout << "\n";
     return solution;
 }
 
