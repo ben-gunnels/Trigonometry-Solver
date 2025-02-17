@@ -12,9 +12,12 @@ public:
 private:
     void OnSolve(wxCommandEvent& event);
 
-    wxTextCtrl* inputSideA;
-    wxTextCtrl* inputSideB;
-    wxTextCtrl* inputAngleC;
+    wxTextCtrl* inputSide_a;
+    wxTextCtrl* inputSide_b;
+    wxTextCtrl* inputSide_c;
+    wxTextCtrl* inputAngle_A;
+    wxTextCtrl* inputAngle_B;
+    wxTextCtrl* inputAngle_C;
     wxStaticText* resultLabel;
 };
 
@@ -27,22 +30,34 @@ bool TriangleSolverApp::OnInit() {
 }
 
 TriangleSolverFrame::TriangleSolverFrame()
-    : wxFrame(nullptr, wxID_ANY, "Triangle Solver", wxDefaultPosition, wxSize(400, 300)) {
+    : wxFrame(nullptr, wxID_ANY, "Triangle Solver", wxDefaultPosition, wxSize(500, 500)) {
 
     wxPanel* panel = new wxPanel(this, wxID_ANY);
     wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
 
     sizer->Add(new wxStaticText(panel, wxID_ANY, "Side A:"), 0, wxALL, 5);
-    inputSideA = new wxTextCtrl(panel, wxID_ANY);
-    sizer->Add(inputSideA, 0, wxEXPAND | wxALL, 5);
+    inputSide_a = new wxTextCtrl(panel, wxID_ANY);
+    sizer->Add(inputSide_a, 0, wxEXPAND | wxALL, 5);
 
     sizer->Add(new wxStaticText(panel, wxID_ANY, "Side B:"), 0, wxALL, 5);
-    inputSideB = new wxTextCtrl(panel, wxID_ANY);
-    sizer->Add(inputSideB, 0, wxEXPAND | wxALL, 5);
+    inputSide_b = new wxTextCtrl(panel, wxID_ANY);
+    sizer->Add(inputSide_b, 0, wxEXPAND | wxALL, 5);
+
+    sizer->Add(new wxStaticText(panel, wxID_ANY, "Side C:"), 0, wxALL, 5);
+    inputSide_c = new wxTextCtrl(panel, wxID_ANY);
+    sizer->Add(inputSide_c, 0, wxEXPAND | wxALL, 5);
+
+    sizer->Add(new wxStaticText(panel, wxID_ANY, "Angle A (degrees):"), 0, wxALL, 5);
+    inputAngle_A = new wxTextCtrl(panel, wxID_ANY);
+    sizer->Add(inputAngle_A, 0, wxEXPAND | wxALL, 5);
+
+    sizer->Add(new wxStaticText(panel, wxID_ANY, "Angle B (degrees):"), 0, wxALL, 5);
+    inputAngle_B = new wxTextCtrl(panel, wxID_ANY);
+    sizer->Add(inputAngle_B, 0, wxEXPAND | wxALL, 5);
 
     sizer->Add(new wxStaticText(panel, wxID_ANY, "Angle C (degrees):"), 0, wxALL, 5);
-    inputAngleC = new wxTextCtrl(panel, wxID_ANY);
-    sizer->Add(inputAngleC, 0, wxEXPAND | wxALL, 5);
+    inputAngle_C = new wxTextCtrl(panel, wxID_ANY);
+    sizer->Add(inputAngle_C, 0, wxEXPAND | wxALL, 5);
 
     wxButton* solveButton = new wxButton(panel, wxID_ANY, "Solve");
     sizer->Add(solveButton, 0, wxALIGN_CENTER | wxALL, 10);

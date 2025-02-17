@@ -273,7 +273,10 @@ void TrigFunctions::SolveSSA(double* solution)
 }
 
 double TrigFunctions::SolveSideLOC(double a, double b, double angle) {
-    return std::sqrt(a * a + b * b - 2.0 * a * b * std::cos(ConvertToRadians(angle))); // Side you are solving for is c
+    double a2, b2;
+    a2 = a * a;
+    b2 = b * b;
+    return std::sqrt(a2 + b2 - 2.0 * a * b * std::cos(ConvertToRadians(angle))); // Side you are solving for is c
 }
 
 double TrigFunctions::SolveAngleLOC(double a, double b, double c) {
@@ -281,6 +284,7 @@ double TrigFunctions::SolveAngleLOC(double a, double b, double c) {
     a2 = a * a;
     b2 = b * b;
     c2 = c * c;
+    std::cout << ConvertToDegrees(std::acos((a2 - b2 - c2) / (-2.0 * b * c))) << "\n";
     return ConvertToDegrees(std::acos((a2 - b2 - c2) / (-2.0 * b * c))); // Angle you are solving for is "alpha"
 }
 
