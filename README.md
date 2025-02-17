@@ -25,9 +25,11 @@ After installation, open MSYS2 MSYS from the Start menu and update the system:
 ```pacman -S mingw-w64-x86_64-wxWidgets```
 
 3. Clone the Repository
-```cd ~/projects  # Change to your preferred directory
+```
+cd ~/projects  # Change to your preferred directory
 git clone <your-repository-url>
-cd <your-project-folder>```
+cd <your-project-folder>
+```
 
 4. Build the wxWidgets library
 Refer to the following documentation for how to build on your system:
