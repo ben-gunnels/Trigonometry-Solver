@@ -38,5 +38,5 @@ Run:
 To confirm the installation. 
 
 5. Compile and Run the Application 
-```g++ -o TrigSolver.exe TrigSolver.cpp Triangle.cpp TrigFunctions.cpp Globals.cpp `wx-config --cxxflags --libs````
+```g++ -o TrigSolver.exe TrigSolver.cpp Triangle.cpp TrigFunctions.cpp Globals.cpp \`wx-config --cxxflags --libs\````
 ```./TrigSolver.exe```
