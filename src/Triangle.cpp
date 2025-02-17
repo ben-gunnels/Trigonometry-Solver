@@ -21,17 +21,6 @@ ValidationObj Triangle::ValidateData()
             [](double x){ return x != 0; });
 
     result.valid = angles[0] < 180 && angles[1] < 180 && angles[2] < 180; // No angle greater than 180
-    
-    // Check triangle inequality condition
-    bool sumCases[3] = {
-        sides[0] < (sides[1] + sides[2]),
-        sides[1] < (sides[0] + sides[2]),
-        sides[2] < (sides[0] + sides[1])
-    };
-
-    // Triangle is valid only if all conditions are true
-    result.valid = std::all_of(std::begin(sumCases), std::end(sumCases), [](bool x) { return x; });
-
 
     return result; 
 }
