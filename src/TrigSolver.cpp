@@ -5,8 +5,6 @@
 #include "TrigSolver.h"
 #include "Triangle.h"
 #include "TrigFunctions.h"
-#include "Test.h"
-
 
 #include <wx/wx.h>
 
