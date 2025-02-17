@@ -43,3 +43,8 @@ To confirm the installation.
 ```g++ -o TrigSolver.exe TrigSolver.cpp Triangle.cpp TrigFunctions.cpp Globals.cpp (wx-config --cxxflags --libs)```
 
 ```./TrigSolver.exe```
+
+### Example
+A brief example with angle-angle-side.
+[!Before](/images/before.png)
+[!After](/images/after.png)
